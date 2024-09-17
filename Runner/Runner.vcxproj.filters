@@ -18,18 +18,27 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="WINAPIDllFunc.cpp">
+    <ClCompile Include="..\LimitationPlan\WINAPIDllFunc.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="WINAPICaller.cpp">
+    <ClCompile Include="..\LimitationPlan\RegManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LimitationPlan\WINAPICaller.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="WINAPIDllFunc.h">
+    <ClInclude Include="..\LimitationPlan\WINAPIDllFunc.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="WINAPICaller.h">
+    <ClInclude Include="..\LimitationPlan\RegManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LimitationPlan\WINAPICaller.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LimitationPlan\httplib.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

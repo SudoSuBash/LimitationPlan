@@ -104,6 +104,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,13 +129,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\LimitationPlan\RegManage.cpp" />
+    <ClCompile Include="..\LimitationPlan\WINAPICaller.cpp" />
+    <ClCompile Include="..\LimitationPlan\WINAPIDllFunc.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="WINAPICaller.cpp" />
-    <ClCompile Include="WINAPIDllFunc.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="WINAPICaller.h" />
-    <ClInclude Include="WINAPIDllFunc.h" />
+    <ClInclude Include="..\LimitationPlan\httplib.h" />
+    <ClInclude Include="..\LimitationPlan\RegManage.h" />
+    <ClInclude Include="..\LimitationPlan\WINAPICaller.h" />
+    <ClInclude Include="..\LimitationPlan\WINAPIDllFunc.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

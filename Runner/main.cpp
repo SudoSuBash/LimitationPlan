@@ -1,8 +1,8 @@
 #include <iostream>
 #include <Windows.h>
 
-#include "WINAPIDllFunc.h"
-#include "WINAPICaller.h"
+#include "../LimitationPlan/WINAPICaller.h"
+#include "../LimitationPlan/WINAPIDllFunc.h"
 using std::cout;
 using std::endl;
 

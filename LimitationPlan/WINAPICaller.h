@@ -12,5 +12,11 @@ public:
 	HRESULT DuplicateProcessToken(DWORD pid, HANDLE* hd);
 	HRESULT WCreateProcessWithToken(HANDLE parent,std::wstring proc);
 
-	
-};
+	HRESULT WCopyFile(
+		std::wstring Old,
+		std::wstring New,
+		BOOL FailIfExists
+	);
+
+
+};	
