@@ -4,11 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Injector", "LimitationPlan\LimitationPlan.vcxproj", "{4D5D1BFB-8318-4944-AD02-D71385CF89EF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EFFC6343-66B0-460A-A43D-0FF1E07C13A3} = {EFFC6343-66B0-460A-A43D-0FF1E07C13A3}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Runner", "Runner\Runner.vcxproj", "{EFFC6343-66B0-460A-A43D-0FF1E07C13A3}"
-	ProjectSection(ProjectDependencies) = postProject
-		{4D5D1BFB-8318-4944-AD02-D71385CF89EF} = {4D5D1BFB-8318-4944-AD02-D71385CF89EF}
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

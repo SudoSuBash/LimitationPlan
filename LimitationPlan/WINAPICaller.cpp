@@ -28,7 +28,9 @@ DWORD WINAPICaller::getProcessSessionId(std::wstring name) {
 		
 		if (sr == name) {
 			DWORD sessid = 0;
+			cout << GetLastError() << std::endl;
 			BOOL res = ProcessIdToSessionId(entry.th32ProcessID, &sessid);
+
 			if (ProcessIdToSessionId(entry.th32ProcessID, &sessid) && sessid == currentSessionId) {
 				return entry.th32ProcessID;
 			}
@@ -89,22 +91,55 @@ HRESULT WINAPICaller::WCreateProcessWithToken(HANDLE parent, std::wstring proc) 
 		&pi
 	);
 
-	return br;
+	if (!br) return GetLastError();
+	return 0;
 }
-BOOL WINAPICaller::AdjustCurrentPrivilege() {
+BOOL WINAPICaller::AdjustCurrentPrivilege(std::wstring name) {
 
 	HANDLE hToken;
 	BOOL fOk = FALSE;
 	if (OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES, &hToken)) {
 		TOKEN_PRIVILEGES tp;
-		tp.PrivilegeCount = 1;
-		LookupPrivilegeValue(NULL, SE_DEBUG_NAME, &tp.Privileges[0].Luid);
-
+		tp.PrivilegeCount = 2;
+		LookupPrivilegeValue(NULL, name.c_str(), &tp.Privileges[0].Luid);
 		tp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
 		AdjustTokenPrivileges(hToken, FALSE, &tp, sizeof(tp), NULL, NULL);
-
+		
 		fOk = (GetLastError() == ERROR_SUCCESS);
 		CloseHandle(hToken);
 	}
 	return fOk;
+}
+
+HRESULT WINAPICaller::WJudgePermission() {
+	HANDLE htoken, cur = GetCurrentProcess();
+	if(!OpenProcessToken(cur, TOKEN_QUERY, &htoken)) return -1;
+
+	TOKEN_ELEVATION ele;
+	DWORD returnLength = 0;
+
+	HRESULT ret = 0;
+	if (GetTokenInformation(htoken, TokenElevation, &ele, sizeof(TOKEN_ELEVATION), &returnLength)) {
+		if (returnLength == sizeof(TOKEN_ELEVATION)) {
+			ret = ele.TokenIsElevated;
+		}
+	}
+	CloseHandle(htoken);
+	return ret;
+}
+
+HRESULT WINAPICaller::WGetModuleFileName(std::wstring* name) {
+	wchar_t file[MAX_PATH] = TEXT("");
+	if(!GetModuleFileName(NULL, file, MAX_PATH)) return GetLastError();
+	*name = wstring(file);
+	return 0;
+}
+
+BOOL WINAPICaller::WCopyFile(
+	std::wstring Old,
+	std::wstring New,
+	BOOL FailIfExists = TRUE
+) {
+	BOOL cpf = CopyFile(Old.c_str(), New.c_str(), FailIfExists);
+	return cpf;
 }

@@ -6,17 +6,19 @@ class WINAPICaller
 public:
 	WINAPICaller();
 
-	BOOL AdjustCurrentPrivilege();
+	BOOL AdjustCurrentPrivilege(std::wstring name);
 	DWORD getProcessSessionId(std::wstring procs);
 
 	HRESULT DuplicateProcessToken(DWORD pid, HANDLE* hd);
 	HRESULT WCreateProcessWithToken(HANDLE parent,std::wstring proc);
 
-	HRESULT WCopyFile(
+	BOOL WCopyFile(
 		std::wstring Old,
 		std::wstring New,
 		BOOL FailIfExists
 	);
 
+	HRESULT WJudgePermission();
 
+	HRESULT WGetModuleFileName(std::wstring* name);
 };	

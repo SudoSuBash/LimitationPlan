@@ -132,6 +132,12 @@
     <ClCompile Include="..\LimitationPlan\RegManage.cpp" />
     <ClCompile Include="..\LimitationPlan\WINAPICaller.cpp" />
     <ClCompile Include="..\LimitationPlan\WINAPIDllFunc.cpp" />
+    <ClCompile Include="BaseCommand.cpp" />
+    <ClCompile Include="CommandExecutor.cpp" />
+    <ClCompile Include="Command_Broadcast.cpp" />
+    <ClCompile Include="Command_ExecLocalCmd.cpp" />
+    <ClCompile Include="Command_Lock.cpp" />
+    <ClCompile Include="Command_Unlock.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +145,12 @@
     <ClInclude Include="..\LimitationPlan\RegManage.h" />
     <ClInclude Include="..\LimitationPlan\WINAPICaller.h" />
     <ClInclude Include="..\LimitationPlan\WINAPIDllFunc.h" />
+    <ClInclude Include="BaseCommand.h" />
+    <ClInclude Include="CommandExecutor.h" />
+    <ClInclude Include="Command_Broadcast.h" />
+    <ClInclude Include="Command_ExecLocalCmd.h" />
+    <ClInclude Include="Command_Lock.h" />
+    <ClInclude Include="Command_Unlock.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

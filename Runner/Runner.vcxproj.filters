@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="头文件\LPHaders">
+      <UniqueIdentifier>{d21ac950-a69d-4e5d-8b48-e53f9447df75}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Commands">
+      <UniqueIdentifier>{9121f66a-8c2e-4d02-9472-9d83eca64e30}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -27,6 +33,24 @@
     <ClCompile Include="..\LimitationPlan\WINAPICaller.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="BaseCommand.cpp">
+      <Filter>源文件\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Command_Unlock.cpp">
+      <Filter>源文件\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandExecutor.cpp">
+      <Filter>源文件\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Command_Broadcast.cpp">
+      <Filter>源文件\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Command_Lock.cpp">
+      <Filter>源文件\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="Command_ExecLocalCmd.cpp">
+      <Filter>源文件\Commands</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\LimitationPlan\WINAPIDllFunc.h">
@@ -40,6 +64,24 @@
     </ClInclude>
     <ClInclude Include="..\LimitationPlan\httplib.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandExecutor.h">
+      <Filter>头文件\LPHaders</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseCommand.h">
+      <Filter>头文件\LPHaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Command_Unlock.h">
+      <Filter>头文件\LPHaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Command_Broadcast.h">
+      <Filter>头文件\LPHaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Command_Lock.h">
+      <Filter>头文件\LPHaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Command_ExecLocalCmd.h">
+      <Filter>头文件\LPHaders</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
