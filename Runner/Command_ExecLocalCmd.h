@@ -6,7 +6,7 @@ class Command_ExecLocalCmd :
 public:
     Command_ExecLocalCmd();
 
-    LRESULT ExecCmd(vector<wstring> args);
+    LRESULT ExecCmd(vector<wstring> args, vector<any>& ret);
 
     wstring getOutput();
 

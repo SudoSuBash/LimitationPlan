@@ -28,7 +28,6 @@ DWORD WINAPICaller::getProcessSessionId(std::wstring name) {
 		
 		if (sr == name) {
 			DWORD sessid = 0;
-			cout << GetLastError() << std::endl;
 			BOOL res = ProcessIdToSessionId(entry.th32ProcessID, &sessid);
 
 			if (ProcessIdToSessionId(entry.th32ProcessID, &sessid) && sessid == currentSessionId) {

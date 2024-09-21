@@ -6,6 +6,6 @@ class Command_Unlock : public BaseCommand
 public:
 	Command_Unlock();
 
-	LRESULT ExecCmd(vector<wstring> args);
+	LRESULT ExecCmd(vector<wstring> args, vector<any>& ret);
 };
 

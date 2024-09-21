@@ -7,7 +7,7 @@ class Command_Broadcast :
 public:
     Command_Broadcast();
 
-    LRESULT ExecCmd(vector<wstring> args);
+    LRESULT ExecCmd(vector<wstring> args, vector<any>& ret);
 
 };
 

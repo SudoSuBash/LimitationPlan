@@ -6,7 +6,7 @@ class Command_Lock :
 public:
     Command_Lock();
 
-    LRESULT ExecCmd(vector<wstring> args);
+    LRESULT ExecCmd(vector<wstring> args, vector<any>& ret);
 
 };
 

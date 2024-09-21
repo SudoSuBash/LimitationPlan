@@ -4,6 +4,6 @@ Command_Broadcast::Command_Broadcast() : BaseCommand(TEXT("broadcast"), 1, { TEX
 
 }
 
-LRESULT Command_Broadcast::ExecCmd(vector<wstring> args) {
+LRESULT Command_Broadcast::ExecCmd(vector<wstring> args, vector<any>& ret) {
 	return 0;
 }

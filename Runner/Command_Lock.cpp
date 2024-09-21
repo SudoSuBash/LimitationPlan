@@ -3,7 +3,7 @@ Command_Lock::Command_Lock() : BaseCommand(TEXT("lock"), 1, { TEXT("lck"),TEXT("
 
 }
 
-LRESULT Command_Lock::ExecCmd(vector<wstring> args) {
+LRESULT Command_Lock::ExecCmd(vector<wstring> args, vector<any>& ret) {
 
 	return 0;
 }

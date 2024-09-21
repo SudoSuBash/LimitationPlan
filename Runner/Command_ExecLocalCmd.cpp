@@ -8,8 +8,11 @@ Command_ExecLocalCmd::Command_ExecLocalCmd() : BaseCommand(TEXT("ExecLocalShell"
 	this->output = NULL;
 }
 
-LRESULT Command_ExecLocalCmd::ExecCmd(vector<wstring> args) {
-	assert(args.size() == 1);
+LRESULT Command_ExecLocalCmd::ExecCmd(vector<wstring> args,vector<any>& ret) {
+	if (args.size() != 1) {
+		ret.push_back(wstring(TEXT("Usage: es|exec|executeshell \"<command>\"")));
+		return 1001;
+	}
 
 	wchar_t* buf = (wchar_t*)malloc(BUF_SIZE);
 	ZeroMemory(buf, BUF_SIZE);
@@ -27,8 +30,9 @@ LRESULT Command_ExecLocalCmd::ExecCmd(vector<wstring> args) {
 		_pclose(fp);
 	}
 
-	
+	ret.push_back(*(this->output));
 	free(buf);
+
 	return 0;
 }
 

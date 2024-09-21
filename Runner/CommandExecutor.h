@@ -1,21 +1,17 @@
 #pragma once
-#include <vector>
-#include <string>
 #include "BaseCommand.h"
 
-using std::vector;
-using std::wstring;
 class CommandExecutor
 {
 public:
-
-
 	CommandExecutor();
 
 	LRESULT registerNewCmd(BaseCommand* cmd);
 
-	LRESULT execCmd(wstring trigger, vector<wstring> args);
+	LRESULT execCmd(std::wstring str, vector<any>& ret);
+
 private:
 	vector<BaseCommand*> commands;
+	LRESULT execCmdArgs(wstring trigger, vector<wstring> args, vector<any>& ret);
 };
 
