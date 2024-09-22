@@ -134,6 +134,8 @@
     <ClCompile Include="..\LimitationPlan\WINAPICaller.cpp" />
     <ClCompile Include="..\LimitationPlan\WINAPIDllFunc.cpp" />
     <ClCompile Include="BaseCommand.cpp" />
+    <ClCompile Include="BroadCastShowWindow.cpp" />
+    <ClCompile Include="BroadCastShowWindow.h" />
     <ClCompile Include="CommandExecutor.cpp" />
     <ClCompile Include="Command_Broadcast.cpp" />
     <ClCompile Include="Command_ExecLocalCmd.cpp" />

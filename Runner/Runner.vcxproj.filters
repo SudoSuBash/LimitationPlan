@@ -51,6 +51,12 @@
     <ClCompile Include="Command_ExecLocalCmd.cpp">
       <Filter>源文件\Commands</Filter>
     </ClCompile>
+    <ClCompile Include="BroadCastShowWindow.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BroadCastShowWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\LimitationPlan\WINAPIDllFunc.h">
