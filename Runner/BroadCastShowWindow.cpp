@@ -25,8 +25,6 @@ ATOM BgetRegisteredClass(HINSTANCE instance) {
 BOOL BcreateWindow(
 	HINSTANCE instance
 ) {
-	UINT height = GetSystemMetrics(SM_CXSCREEN);
-	UINT width = GetSystemMetrics(SM_CYSCREEN);
 	HWND hwnd = CreateWindow(TEXT("BroadCastWin"), TEXT("Broadcast"), WS_POPUP | WS_MAXIMIZE, 0, 0,0,0, NULL, NULL, instance, NULL);
 	if (!hwnd) return FALSE;
 	ShowWindow(hwnd, SW_SHOW);

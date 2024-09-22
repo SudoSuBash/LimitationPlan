@@ -8,9 +8,19 @@ using std::wcout;
 using std::thread;
 
 thread recvmsg;
-void ProcMsg(MSG& msg) {
 
+void WindowEvent() {
+	HINSTANCE instance = GetModuleHandle(NULL);
+	BgetRegisteredClass(instance);
+	BcreateWindow(instance);
+	MSG msg;
 
+	while (GetMessage(&msg, NULL, 0, 0)) {
+		
+		TranslateMessage(&msg);
+		DispatchMessage(&msg);
+		Sleep(100);
+	}
 }
 
 Command_Broadcast::Command_Broadcast() : BaseCommand(TEXT("broadcast"), 1, { TEXT("br"),TEXT("broadcast") }) {
@@ -18,23 +28,13 @@ Command_Broadcast::Command_Broadcast() : BaseCommand(TEXT("broadcast"), 1, { TEX
 }
 
 LRESULT Command_Broadcast::ExecCmd(vector<wstring> args, vector<any>& ret) {
-	HINSTANCE instance = GetModuleHandle(NULL);
-	BgetRegisteredClass(instance);
-
-	if (!BcreateWindow(instance)) {
-		ret.push_back(wstring(TEXT("E:Could not create window.")));
-
+	HWND hwnd = FindWindow(L"BroadCastWin",L"Broadcast");
+	if (hwnd != NULL) {
+		ret.push_back(wstring(L"E:Already opened a Broadcast Window."));
 		return 1001;
 	}
-	MSG msg;
 
-	while (GetMessage(&msg, NULL, 0, 0)) {
-		TranslateMessage(&msg);
-		DispatchMessage(&msg);
-	}
-	//BWTarget = TEXT("00");
-	//recvmsg = thread(ProcMsg,msg);
-	//recvmsg.join();
-	return msg.wParam;
+	recvmsg = thread(WindowEvent);
+	recvmsg.detach();
+	return 0;
 }
-
