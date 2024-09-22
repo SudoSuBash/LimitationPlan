@@ -4,6 +4,7 @@
 using std::wstring;
 
 HINSTANCE hinstance;
+wstring* target;
 ATOM BgetRegisteredClass(HINSTANCE instance) {
 	WNDCLASSEX ex;
 	ex.cbSize = sizeof(WNDCLASSEX);
@@ -34,7 +35,7 @@ BOOL BcreateWindow(
 
 
 LRESULT CALLBACK BWndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam) {
-	wstring target = TEXT("不要再讲话了,都\n保!持!安!静!"),ver_info=TEXT("Limitation Plan 版本 1001");
+	wstring ver_info=TEXT("Limitation Plan 版本 1001");
 
 	HDC hdc;
 	PAINTSTRUCT ps;
@@ -85,12 +86,12 @@ LRESULT CALLBACK BWndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam)
 		SetBkColor(hdc, RGB(0, 0, 0));
 
 		SelectObject(hdc, ft1);
-		height = DrawText(hdc, target.c_str(), target.size(), &content_rect, DT_CALCRECT | DT_CENTER | DT_VCENTER | DT_WORDBREAK);
+		height = DrawText(hdc, target->c_str(), target->size(), &content_rect, DT_CALCRECT | DT_CENTER | DT_VCENTER | DT_WORDBREAK);
 		content_rect.top -= height / 2;
 		content_rect.bottom += height / 2;
 		content_rect.left = rect.left;
 		content_rect.right = rect.right;
-		DrawText(hdc, target.c_str(), target.size(), &content_rect, DT_CENTER  | DT_WORDBREAK);
+		DrawText(hdc, target->c_str(), target->size(), &content_rect, DT_CENTER  | DT_WORDBREAK);
 		SetTextAlign(hdc, TA_CENTER);
 		SetTextColor(hdc, RGB(255,255, 255));
 		SelectObject(hdc, ft2);

@@ -28,10 +28,15 @@ Command_Broadcast::Command_Broadcast() : BaseCommand(TEXT("broadcast"), 1, { TEX
 }
 
 LRESULT Command_Broadcast::ExecCmd(vector<wstring> args, vector<any>& ret) {
+	if (args.size() != 1) {
+		ret.push_back(wstring(L"Usage:br|broadcast <text>"));
+		return 1001;
+	}
+	target = new wstring(args[0]);
 	HWND hwnd = FindWindow(L"BroadCastWin",L"Broadcast");
 	if (hwnd != NULL) {
 		ret.push_back(wstring(L"E:Already opened a Broadcast Window."));
-		return 1001;
+		return 1002;
 	}
 
 	recvmsg = thread(WindowEvent);

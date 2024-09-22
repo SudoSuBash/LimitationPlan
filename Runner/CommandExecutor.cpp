@@ -42,6 +42,8 @@ LRESULT  CommandExecutor::execCmd(wstring cmd, vector<any>& ret) {
 			if (chrs.size() == 0 || chrs.top() != '\'') {
 				if(chrs.size() == 0) //不在字符串中
 					chrs.push('\'');
+				else
+					temp += cmd[i];
 			}
 			else {
 				chrs.pop();
@@ -51,6 +53,8 @@ LRESULT  CommandExecutor::execCmd(wstring cmd, vector<any>& ret) {
 			if (chrs.size() == 0 || chrs.top() != '"') {
 				if (chrs.size() == 0) //不在字符串中
 					chrs.push('"');
+				else
+					temp += cmd[i];
 			}
 			else {
 				chrs.pop();

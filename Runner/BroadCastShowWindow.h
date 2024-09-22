@@ -5,7 +5,7 @@
 
 using std::wstring;
 
-
+extern wstring* target;
 BOOL BcreateWindow(
 	HINSTANCE instance
 );

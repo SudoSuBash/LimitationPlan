@@ -16,7 +16,6 @@ using std::getline;
 fnRtlSetProcessIsCritical critical;
 WINAPICaller caller;
 
-
 void SetToCriticalProcess() {
 	critical = getRtlProcCritical();
 	critical(TRUE, NULL, FALSE);
