@@ -57,6 +57,12 @@
     <ClCompile Include="BroadCastShowWindow.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="glob.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="glob.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\LimitationPlan\WINAPIDllFunc.h">

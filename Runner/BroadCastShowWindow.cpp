@@ -1,6 +1,8 @@
 #include "BroadCastShowWindow.h"
 #include <string>
 #include <iostream>
+#include "glob.h"
+
 using std::wstring;
 
 HINSTANCE hinstance;
@@ -35,7 +37,7 @@ BOOL BcreateWindow(
 
 
 LRESULT CALLBACK BWndProc(HWND hwnd, UINT message, WPARAM wparam, LPARAM lparam) {
-	wstring ver_info=TEXT("Limitation Plan °æ±¾ 1001");
+	wstring ver_info=TEXT("Limitation Plan °æ±¾ "+*ver);
 
 	HDC hdc;
 	PAINTSTRUCT ps;

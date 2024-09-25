@@ -3,6 +3,7 @@
 
 #include <thread>
 #include <iostream>
+#include "glob.h"
 
 using std::wcout;
 using std::thread;
@@ -14,6 +15,8 @@ void WindowEvent() {
 	BgetRegisteredClass(instance);
 	BcreateWindow(instance);
 	MSG msg;
+	HWND hwnd = FindWindow(L"BroadCastWin", L"Broadcast");
+	SetForegroundWindow(hwnd);
 
 	while (GetMessage(&msg, NULL, 0, 0)) {
 		
@@ -41,5 +44,6 @@ LRESULT Command_Broadcast::ExecCmd(vector<wstring> args, vector<any>& ret) {
 
 	recvmsg = thread(WindowEvent);
 	recvmsg.detach();
+
 	return 0;
 }

@@ -28,7 +28,7 @@ LRESULT CommandExecutor::registerNewCmd(BaseCommand* cmd) {
 LRESULT  CommandExecutor::execCmd(wstring cmd, vector<any>& ret) {
 	cmd.erase(0, cmd.find_first_not_of(TEXT(' ')));
 	cmd.erase(cmd.find_last_not_of(TEXT(' '))+1);
-	if (cmd.empty()) return 0;
+	if (cmd.empty()) return -2;
 
 	vector<wstring> cmds = vector<wstring>();
 	wstring temp = T("");
