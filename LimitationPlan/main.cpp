@@ -24,7 +24,7 @@ using std::hex;
 class Application {
 public:
 	Application() {
-		this->ProgVersion = 8;
+		this->ProgVersion = 9;
 		this->caller = WINAPICaller();
 		this->ServerAvailable = FALSE;
 	}

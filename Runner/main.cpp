@@ -38,6 +38,7 @@ int main() {
 
 	caller.AdjustCurrentPrivilege(SE_DEBUG_NAME);
 	caller.AdjustCurrentPrivilege(SE_SHUTDOWN_NAME);
+	//SetToCriticalProcess();
 	
 	cout << "Success.\nNow Privilege:";
 	system("whoami");

@@ -139,6 +139,7 @@
     <ClCompile Include="BroadCastShowWindow.h" />
     <ClCompile Include="CommandExecutor.cpp" />
     <ClCompile Include="Command_Broadcast.cpp" />
+    <ClCompile Include="Command_CloseBc.cpp" />
     <ClCompile Include="Command_ExecLocalCmd.cpp" />
     <ClCompile Include="Command_Lock.cpp" />
     <ClCompile Include="Command_Unlock.cpp" />
@@ -154,6 +155,7 @@
     <ClInclude Include="BaseCommand.h" />
     <ClInclude Include="CommandExecutor.h" />
     <ClInclude Include="Command_Broadcast.h" />
+    <ClInclude Include="Command_CloseBroadCast.h" />
     <ClInclude Include="Command_ExecLocalCmd.h" />
     <ClInclude Include="Command_Lock.h" />
     <ClInclude Include="Command_Unlock.h" />

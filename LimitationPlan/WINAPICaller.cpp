@@ -142,3 +142,8 @@ BOOL WINAPICaller::WCopyFile(
 	BOOL cpf = CopyFile(Old.c_str(), New.c_str(), FailIfExists);
 	return cpf;
 }
+
+
+HRESULT WINAPICaller::captureScreen() {
+	return 0;
+}

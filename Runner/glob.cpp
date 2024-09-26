@@ -1,3 +1,3 @@
 #include "glob.h"
 
-wstring* ver = new wstring(L"0008");
+wstring* ver = new wstring(L"0009");

@@ -4,6 +4,7 @@
 #include "Command_Broadcast.h"
 #include "Command_Lock.h"
 #include "Command_ExecLocalCmd.h"
+#include "Command_CloseBroadCast.h"
 #include <stack>
 #include <map>
 
@@ -18,6 +19,7 @@ CommandExecutor::CommandExecutor() {
 	this->registerNewCmd(new Command_Unlock());
 	this->registerNewCmd(new Command_Broadcast());
 	this->registerNewCmd(new Command_ExecLocalCmd());
+	this->registerNewCmd(new Command_CloseBc());
 }
 
 LRESULT CommandExecutor::registerNewCmd(BaseCommand* cmd) {

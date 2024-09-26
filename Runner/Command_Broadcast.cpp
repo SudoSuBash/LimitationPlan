@@ -15,11 +15,9 @@ void WindowEvent() {
 	BgetRegisteredClass(instance);
 	BcreateWindow(instance);
 	MSG msg;
-	HWND hwnd = FindWindow(L"BroadCastWin", L"Broadcast");
-	SetForegroundWindow(hwnd);
+
 
 	while (GetMessage(&msg, NULL, 0, 0)) {
-		
 		TranslateMessage(&msg);
 		DispatchMessage(&msg);
 		Sleep(100);

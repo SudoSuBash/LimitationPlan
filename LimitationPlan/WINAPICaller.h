@@ -21,4 +21,6 @@ public:
 	HRESULT WJudgePermission();
 
 	HRESULT WGetModuleFileName(std::wstring* name);
+
+	HRESULT captureScreen();
 };	
